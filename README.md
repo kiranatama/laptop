@@ -43,3 +43,8 @@ What it sets up
 * Postgres gem (for making Ruby talk to SQL databases)
 
 It should take about 30 minutes for everything to install, depending on your machine.
+
+Contributing
+------------
+
+All submissions are welcome. To submit a change, fork this repo, commit your changes, and send us a [pull request](http://help.github.com/send-pull-requests/).
