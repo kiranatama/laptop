@@ -27,7 +27,7 @@ and finally run this one-liner:
 
 You might want to use sources.list file that use KAMBING.ui.ac.id as mirror
 
-    sudo wget -O /etc/apt/sources.list https://raw.github.com/gist/1286394/128d5b5585ef803b66a18a930a5630a9a6a6e1b2/sources.list
+    sudo wget -O /etc/apt/sources.list http://bit.ly/nslG4Z
 
 
 What it sets up
