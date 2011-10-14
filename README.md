@@ -17,6 +17,11 @@ Ubuntu
 
 First, install [Ubuntu](http://www.ubuntu.com/download).
 
+Before proceeding, you might want to use sources.list file that use KAMBING.ui.ac.id as mirror
+
+    sudo wget -O /etc/apt/sources.list http://bit.ly/nslG4Z
+    sudo apt-get update -y
+
 Then, install Curl
 
     sudo apt-get install curl -y
@@ -24,11 +29,6 @@ Then, install Curl
 and finally run this one-liner:
 
     bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/ubuntu)
-
-You might want to use sources.list file that use KAMBING.ui.ac.id as mirror
-
-    sudo wget -O /etc/apt/sources.list http://bit.ly/nslG4Z
-
 
 What it sets up
 ---------------
