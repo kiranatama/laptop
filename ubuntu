@@ -19,7 +19,11 @@ echo "Installing ImageMagick, good for cropping and re-sizing images ..."
   sudo apt-get install imagemagick --fix-missing -y
 
 echo "Installing RVM (Ruby Version Manager) ..."
-  curl -s https://rvm.beginrescueend.com/install/rvm -o rvm-installer ; chmod +x rvm-installer ; ./rvm-installer --version latest
+  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 
-bash < <(curl -s https://raw.github.com/thoughtbot/laptop/master/ruby)
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+
+source .bash_profile
+
+bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/ruby)
 
