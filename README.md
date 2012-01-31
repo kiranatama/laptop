@@ -17,12 +17,18 @@ Ubuntu
 
 First, install [Ubuntu](http://www.ubuntu.com/download).
 
-Then, run this one-liner:
+Before proceeding, you might want to use sources.list file that use KAMBING.ui.ac.id as mirror
+
+    sudo wget -O /etc/apt/sources.list http://bit.ly/nslG4Z
+    sudo apt-get update -y
+
+Then, install Curl
+
+    sudo apt-get install curl -y
+
+and finally run this one-liner:
 
     bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/ubuntu)
-
-If you're setting up Ubuntu for one of our workshops, we recommend you also install gEdit for your text editor.
-You can [customize it with these instructions](http://blog.sudobits.com/2011/04/02/textmate-for-ubuntu-linux/).
 
 What it sets up
 ---------------
@@ -48,3 +54,4 @@ Contributing
 ------------
 
 All submissions are welcome. To submit a change, fork this repo, commit your changes, and send us a [pull request](http://help.github.com/send-pull-requests/).
+
