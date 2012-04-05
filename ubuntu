@@ -21,6 +21,9 @@ echo "Installing ack, a good way to search through files ..."
 echo "Installing ImageMagick, good for cropping and re-sizing images ..."
   sudo apt-get install imagemagick libmagick++-dev libmagickwand-dev libmagickcore-dev --fix-missing -y
 
+echo "Installing subversion, an open source version control system ..."
+  sudo apt-get install subversion
+
 echo "Installing git, free & open source, distributed version control system ..."
   sudo apt-get install git git-core gitg
 
