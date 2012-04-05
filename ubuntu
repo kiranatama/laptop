@@ -21,6 +21,15 @@ echo "Installing ack, a good way to search through files ..."
 echo "Installing ImageMagick, good for cropping and re-sizing images ..."
   sudo apt-get install imagemagick libmagick++-dev libmagickwand-dev libmagickcore-dev --fix-missing -y
 
+echo "Installing subversion, an open source version control system ..."
+  sudo apt-get install subversion -y
+
+echo "Installing git, free & open source, distributed version control system ..."
+  sudo apt-get install git git-core gitg -y
+
+echo "Installing Apache web server, The Number One HTTP Server On The Internet ..."
+  sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev -y
+
 echo "Installing .gemrc so installing gem won't create ri files"
   if [ ! -f ~/.gemrc ]
   then
