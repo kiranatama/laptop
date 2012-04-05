@@ -12,6 +12,9 @@ echo "Installing OS packages. You will be prompted for your password ..."
 echo "Install Postgres, a great open source relational database ..."
   sudo apt-get install libpq5 libpq-dev postgresql -y
 
+echo "Install MySQL, a gread open source relational database ..."
+  sudo apt-get install libmysqlclient-dev mysql-server mysql-admin mysql-client -y
+
 echo "Installing ack, a good way to search through files ..."
   sudo apt-get install ack-grep -y
 
