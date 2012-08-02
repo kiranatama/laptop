@@ -3,9 +3,10 @@
 echo "Checking for SSH key, generating one if it exists ..."
 if [ ! -f ~/.ssh/id_rsa.pub ]; then 
   ssh-keygen -t rsa
-fi
+fi;
 
-read -p "Do you want to use Ubuntu mirror from Indonesia? [y/n] " answer
+read -p "Do you want to use Ubuntu mirror from Indonesia? [y/n] " answer;
+
 if [ $answer = y ]; then
   echo "Using Ubuntu mirror from Indonesia ..."
   export codename=`lsb_release -sc`
@@ -31,7 +32,7 @@ if [ $answer = y ]; then
   deb-src http://extras.ubuntu.com/ubuntu $codename main
 DELIM
   sudo mv tmp.sources.list /etc/apt/sources.list
-else
+else 
   echo "Not using Ubuntu mirror from Indonesia ..."
 fi;
 
