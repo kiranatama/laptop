@@ -6,8 +6,7 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
 fi
 
 read -p "Do you want to use Ubuntu mirror from Indonesia? [y/n] " answer
-if [[ $answer = y ]]
-then
+if [ $answer = y ]; then
   echo "Using Ubuntu mirror from Indonesia ..."
   export codename=`lsb_release -sc`
   sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup
@@ -34,7 +33,7 @@ DELIM
   sudo mv tmp.sources.list /etc/apt/sources.list
 else
   echo "Not using Ubuntu mirror from Indonesia ..."
-fi
+fi;
 
 echo "Using apt-get to install OS packages so let's update it first ..."
 sudo apt-get update -y
