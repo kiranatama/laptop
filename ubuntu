@@ -10,24 +10,24 @@ then
   export codename=`lsb_release -sc`
   sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup
   cat > tmp.sources.list <<DELIM
-###### Ubuntu Indonesian Repos ######
-deb http://kambing.ui.ac.id/ubuntu $codename main restricted universe multiverse
-#deb-src http://kambing.ui.ac.id/ubuntu $codename main restricted universe multiverse
-deb http://kambing.ui.ac.id/ubuntu $codename-updates main restricted universe multiverse
-#deb-src http://kambing.ui.ac.id/ubuntu $codename-updates main restricted universe multiverse
-deb http://kambing.ui.ac.id/ubuntu $codename-security main restricted universe multiverse
-#deb-src http://kambing.ui.ac.id/ubuntu $codename-security main restricted universe multiverse
-deb http://kambing.ui.ac.id/ubuntu $codename-proposed main restricted universe multiverse
-#deb-src http://kambing.ui.ac.id/ubuntu $codename-proposed main restricted universe multiverse
-deb http://kambing.ui.ac.id/ubuntu $codename-backports main restricted universe multiverse
-#deb-src http://kambing.ui.ac.id/ubuntu $codename-backports main restricted universe multiverse
+  ###### Ubuntu Indonesian Repos ######
+  deb http://kambing.ui.ac.id/ubuntu $codename main restricted universe multiverse
+  #deb-src http://kambing.ui.ac.id/ubuntu $codename main restricted universe multiverse
+  deb http://kambing.ui.ac.id/ubuntu $codename-updates main restricted universe multiverse
+  #deb-src http://kambing.ui.ac.id/ubuntu $codename-updates main restricted universe multiverse
+  deb http://kambing.ui.ac.id/ubuntu $codename-security main restricted universe multiverse
+  #deb-src http://kambing.ui.ac.id/ubuntu $codename-security main restricted universe multiverse
+  deb http://kambing.ui.ac.id/ubuntu $codename-proposed main restricted universe multiverse
+  #deb-src http://kambing.ui.ac.id/ubuntu $codename-proposed main restricted universe multiverse
+  deb http://kambing.ui.ac.id/ubuntu $codename-backports main restricted universe multiverse
+  #deb-src http://kambing.ui.ac.id/ubuntu $codename-backports main restricted universe multiverse
 
-#### Ubuntu Partner Repo`
-deb http://archive.canonical.com/ubuntu $codename partner
+  #### Ubuntu Partner Repo
+  deb http://archive.canonical.com/ubuntu $codename partner
 
-#### Ubuntu Extras Repo
-deb http://extras.ubuntu.com/ubuntu $codename main
-deb-src http://extras.ubuntu.com/ubuntu $codename main
+  #### Ubuntu Extras Repo
+  deb http://extras.ubuntu.com/ubuntu $codename main
+  deb-src http://extras.ubuntu.com/ubuntu $codename main
 DELIM
   sudo mv tmp.sources.list /etc/apt/sources.list
 else
@@ -43,8 +43,14 @@ sudo apt-get upgrade -y
 echo "Installing OS packages. You will be prompted for your password ..."
 sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev -y
 
-echo "Install Postgres, a great open source relational database ..."
-sudo apt-get install libpq5 libpq-dev postgresql -y
+ead -p "Do you want to install Postgres? [y/n] " answer
+if [[ $answer = y ]]
+then
+  echo "Install Postgres, a great open source relational database ..."
+  sudo apt-get install libpq5 libpq-dev postgresql -y
+else
+  echo "Not installing Postgres"
+fi
 
 echo "Install MySQL, a gread open source relational database ..."
 sudo apt-get install libmysqlclient-dev mysql-server mysql-admin mysql-client -y
@@ -63,39 +69,27 @@ sudo apt-get install git git-core gitg -y
 
 source .bash_profile
 
-if [ -f ruby ]
+read -p "Do you want to install rvm and set default ruby? [y/n] " answer
+if [[ $answer = y ]]
 then
-  chmod +x ruby
-  read -p "Do you want to install rvm and set default ruby? [y/n] " answer
-  if [[ $answer = y ]]
-  then
-    bash < <(echo ./ruby)
-  else
-    echo "Not installing rvm and set default ruby ..."
-  fi
+  bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/ruby)
+else
+  echo "Not installing rvm and set default ruby ..."
 fi
 
-if [ -f apache ]
+read -p "Do you want to install apache (required for installing php)? [y/n] " answer
+if [[ $answer = y ]]
 then
-  chmod +x apache
-  read -p "Do you want to install apache (required for installing php)? [y/n] " answer
-  if [[ $answer = y ]]
-  then
-    bash < <(echo ./apache)
-  else
-    echo "Not installing apache ..."
-  fi
+  bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/apache)
+else
+  echo "Not installing apache ..."
 fi
 
-if [ -f php ]
+read -p "Do you want to install php? [y/n] " answer
+if [[ $answer = y ]]
 then
-  chmod +x php
-  read -p "Do you want to install php? [y/n] " answer
-  if [[ $answer = y ]]
-  then
-    bash < <(echo ./php)
-  else
-    echo "Not installing php ..."
-  fi
+  bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/php)
+else
+  echo "Not installing php ..."
 fi
 
