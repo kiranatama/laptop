@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Checking for SSH key, generating one if it exists ..."
-if [[ -f ~/.ssh/id_rsa.pub ]]; then 
+if [ ! -f ~/.ssh/id_rsa.pub ]; then 
   ssh-keygen -t rsa
 fi
 
