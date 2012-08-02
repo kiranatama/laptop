@@ -1,2 +1,2 @@
 echo "Installing apache webserver"
-sudo apt-get install apache2 apache2-mpm-prefork apache2-prefork-dev apach2-utils -y
+sudo apt-get install apache2 apache2-mpm-prefork apache2-prefork-dev apache2-utils libapr1-dev libaprutil1-dev -y
