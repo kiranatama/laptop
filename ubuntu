@@ -45,7 +45,7 @@ sudo apt-get dist-upgrade
 echo "Installing OS packages. You will be prompted for your password ..."
 sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev -y
 
-ead -p "Do you want to install Postgres? [y/n] " answer
+read -p "Do you want to install Postgres? [y/n] " answer
 if [[ $answer = y ]]
 then
   echo "Install Postgres, a great open source relational database ..."
@@ -68,8 +68,6 @@ sudo apt-get install subversion -y
 
 echo "Installing git, free & open source, distributed version control system ..."
 sudo apt-get install git git-core gitg -y
-
-source .bash_profile
 
 read -p "Do you want to install rvm and set default ruby? [y/n] " answer
 if [[ $answer = y ]]
