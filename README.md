@@ -6,11 +6,13 @@ Laptop is a set of scripts to get your laptop set up as a development machine.
 Mac OS X
 --------
 
-First, install [GCC for OS X](https://github.com/kennethreitz/osx-gcc-installer). (requires OS X 10.6 or higher)
+~~First, install [GCC for OS X](https://github.com/kennethreitz/osx-gcc-installer). (requires OS X 10.6 or higher)~~
 
-Then, run this one-liner:
+~~Then, run this one-liner:~~
 
-    bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/mac)
+~~bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/mac)~~
+
+Not maintained anymore
 
 Ubuntu
 ------
@@ -26,9 +28,12 @@ Then, install Curl
 
     sudo apt-get install curl -y
 
-and finally run this one-liner:
-
-    bash < <(curl -s https://raw.github.com/kiranatama/laptop/master/ubuntu)
+and finally run this:
+    
+    wget https://raw.github.com/kiranatama/laptop/master/ubuntu
+    chmod +x ubuntu
+    ./ubuntu
+    
 
 What it sets up
 ---------------
